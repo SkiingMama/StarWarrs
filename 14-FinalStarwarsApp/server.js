@@ -7,7 +7,7 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -82,7 +82,7 @@ app.post("/api/new", function(req, res) {
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newcharacter);
+  console.log("hi there");
 
   characters.push(newcharacter);
 
